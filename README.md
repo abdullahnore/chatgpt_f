@@ -6,3 +6,5 @@ basic chatGpt API which restrcts response to  legal CLM  without any training da
 ![image](https://user-images.githubusercontent.com/49518940/217767882-2c9f0184-fa8d-40ca-b391-b861e254a5cd.png)
 //example 3
 ![image](https://user-images.githubusercontent.com/49518940/217768329-106f0e75-e4b8-4e11-b736-83f6bbb71083.png)
+//example 3
+![image](https://user-images.githubusercontent.com/49518940/218057939-a4a2e397-2eee-448e-8259-8e3e22591c63.png)
