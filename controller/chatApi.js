@@ -3,7 +3,7 @@ const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config({ path: __dirname + "/.env" });
 //configure the api key
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY2,
 });
 
 // Create a new OpenAIApi object using the Configuration object
@@ -13,14 +13,13 @@ function chatResponse(question) {
   return new Promise((resolve, reject) => {
     let prompt =
       question +
-      "? Remeber before answering check if  the question about legal contract management or related terms an acrynomns or synonyms or legal papers or legal domain or legal tech  or stamp paper  where region restriction is india if not then reply i can only answer question related to legal contract managment";
+      "? if  the question about legal contract management or related terms or acrynomns or synonyms or legal papers or legal domain or legal tech  or legal agreements or stamp paper  an anything related to it  where region restriction is india if not then reply 'i can only answer question related to legal contract managment'";
     // Request text completion from OpenAI using the 'text-davinci-003' model
     openai
       .createCompletion({
         model: "text-davinci-003",
         prompt: prompt,
-        max_tokens: 4000,
-
+        max_tokens: 2000,
         temperature: 0,
       })
       .then((response) => {
@@ -29,6 +28,7 @@ function chatResponse(question) {
         return response?.data?.choices?.[0]?.text;
       })
       .then((AIData) => {
+        console.log(AIData);
         resolve({ question, answer: AIData });
       })
       .catch((err) => {
